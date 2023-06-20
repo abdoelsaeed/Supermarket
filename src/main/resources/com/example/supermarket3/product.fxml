@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="594.0" prefWidth="945.0" stylesheets="@abdo.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.supermarket3.control.Product">
+   <children>
+      <Pane layoutX="-1.0" prefHeight="594.0" prefWidth="236.0" style="-fx-background-color: #392551;">
+         <children>
+            <TextField fx:id="namee" layoutX="1.0" layoutY="115.0" prefHeight="60.0" prefWidth="220.0" promptText="Enter Name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="-8.0" layoutY="36.0" prefHeight="50.0" prefWidth="230.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 7;" text="Product" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="numberr" layoutY="196.0" prefHeight="60.0" prefWidth="220.0" promptText="Enter Number">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="pricee" layoutY="275.0" prefHeight="60.0" prefWidth="220.0" promptText="Enter price">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="discountt" layoutX="119.0" layoutY="353.0" prefHeight="43.0" prefWidth="106.0" promptText="Discount">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button layoutX="55.0" layoutY="418.0" mnemonicParsing="false" onAction="#add" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: #FA2C56;" text="ADD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="55.0" layoutY="471.0" mnemonicParsing="false" onAction="#delete" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: #FA2C56;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="55.0" layoutY="525.0" mnemonicParsing="false" onAction="#update" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: #FA2C56;" text="Update by name" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="typee" layoutX="2.0" layoutY="353.0" prefHeight="43.0" prefWidth="106.0" promptText="Type">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <BorderPane layoutX="230.0" layoutY="-1.0" prefHeight="594.0" prefWidth="719.0">
+         <top>
+            <Pane prefHeight="116.0" prefWidth="715.0" style="-fx-background-color: #392551;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="search" layoutX="239.0" layoutY="33.0" prefHeight="50.0" prefWidth="220.0" promptText="Search Here">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="123.0" layoutY="23.0" mnemonicParsing="false" onAction="#backhome" prefHeight="66.0" prefWidth="77.0" styleClass="button1" stylesheets="@sheet1.css">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons8-back-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="500.0" layoutY="23.0" mnemonicParsing="false" onAction="#search" prefHeight="66.0" prefWidth="77.0" styleClass="button1" stylesheets="@sheet1.css">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons8-search-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="close" layoutX="695.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" prefHeight="31.0" prefWidth="28.0" style="-fx-background-color: red;" text="X" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="refrech" layoutX="643.0" layoutY="71.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="67.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 30;" stylesheets="@sheet1.css" text="Refresh" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+         <right>
+            <TableView fx:id="mum" prefHeight="479.0" prefWidth="720.0" stylesheets="@sheet1.css" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="103.51307678222656" text="ID" />
+                <TableColumn fx:id="name" prefWidth="123.5478515625" text="Name" />
+                  <TableColumn fx:id="number" prefWidth="126.05218505859375" style="-fx-alignment: center;" text="Number" />
+                  <TableColumn fx:id="price" prefWidth="108.52166748046875" style="-fx-alignment: center;" text="Price" />
+                  <TableColumn fx:id="type" prefWidth="136.90435791015625" style="-fx-alignment: center;" text="Type" />
+                  <TableColumn fx:id="discount" prefWidth="117.70434147104731" style="-fx-alignment: center;" text="Discount" />
+              </columns>
+            </TableView>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
